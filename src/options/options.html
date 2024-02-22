@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Browser Assistant Options</title>
+	<style>
+		table {
+			padding: 8px;
+			border-spacing: 6px;
+		}
+
+		th {
+			font-size: 1.2rem;
+		}
+
+		tr {
+			font-size: 1.0rem;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Brower Assistant - Options</h1>
+	<hr>
+
+	<table>
+		<tr>
+			<th> Name </th>
+			<th> Context type </th>
+			<th> Model </th>
+			<th> Prompt </th>
+			<th> User input needed? </th>
+		</tr>
+		<tr id="1">
+			<td>
+				<input type="text" value="Summary (selection)">
+			</td>
+			<td><select id="1-context-type">
+					<option value="none">None</option>
+					<option value="selection">Selection</option>
+					<option value="document">Entire document</option>
+				</select></td>
+			<td>
+				<input type="text" id="1-model" value="llama2">
+			</td>
+			<td>
+				<input type="text" id="1-prompt" value="Please summarize the following text: {context}">
+			</td>
+			<td>
+				<input type="checkbox" id="1-user-input" value="false">
+			</td>
+		</tr>
+		<tr id="2">
+			<td><input type="text" value="Summary (document)"></td>
+			<td><select id="1-context-type">
+					<option value="none">None</option>
+					<option value="selection">Selection</option>
+					<option value="document">Entire document</option>
+				</select></td>
+			<td>
+				<input type="text" id="1-model" value="llama2">
+			</td>
+			<td>
+				<input type="text" id="1-prompt" value="Please summarize the following text: {context}">
+			</td>
+			<td>
+				<input type="checkbox" id="1-user-input" value="false">
+			</td>
+		</tr>
+	</table>
+
+	<div id="status"></div>
+	<button id="save">Save</button>
+	<p id="save-status"></p>
+
+
+	<script src="options.js"></script>
+</body>
+
+</html>

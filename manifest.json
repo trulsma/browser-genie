@@ -1,0 +1,31 @@
+{
+	"name": "Assistant",
+	"description": "Browser Assistant",
+	"version": "1.0",
+	"manifest_version": 3,
+	"permissions": [
+		"contextMenus",
+		"storage"
+	],
+	"options_page": "src/options/options.html",
+	"background": {
+		"service_worker": "src/background.js"
+	},
+	"icons": {
+		"64": "images/icon.png"
+	},
+	"content_scripts": [
+		{
+			"js": [
+				"src/content.js"
+			],
+			"matches": [
+				"https://*/*",
+				"file://*/*"
+			]
+		}
+	],
+	"host_permissions": [
+		"http://localhost/*"
+	]
+}
